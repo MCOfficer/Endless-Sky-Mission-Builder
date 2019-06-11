@@ -7,7 +7,7 @@ image:
 build_script:
 
 - cmd: appveyor\build.bat
-- sh: ./appveyor/build.sh
+- sh: chmod +x appveyor/build.sh && ./appveyor/build.sh
 
 artifacts:
 - path: ESMB-win64*
