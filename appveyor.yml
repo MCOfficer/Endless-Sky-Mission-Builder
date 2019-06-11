@@ -31,4 +31,4 @@ build_script:
     cp dist\ESMB.exe artifacts\ESMB-x86_64-pyinstaller-upx.exe
 
 artifacts:
-- path artifacts\*
+- path: artifacts\*
