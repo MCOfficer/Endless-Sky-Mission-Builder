@@ -1,11 +1,14 @@
 version: '#{build}'
 
 image:
+- Ubuntu
 - Visual Studio 2015
 
 build_script:
 
 - cmd: appveyor\build.bat
+- sh: appveyor\build.sh
 
 artifacts:
-- path: artifacts\*
+- path: ESMB-win64*
+- path: ESMB-amd64*
