@@ -12,6 +12,6 @@ C:\Python37-x64\Scripts\pyinstaller -D -y -w ESMB.py
 7z a -tzip -mx9 -y ESMB-win64-pyinstaller.zip .\dist\ESMB
 rd /S /Q dist
 
-C:\Python37-x64\Scripts\pyinstaller -F -y -w ESMB.py --dispath onefile.dist
-cp onefile.dist\ESMB ESMB-win64-pyinstaller.exe
+C:\Python37-x64\Scripts\pyinstaller -F -y -w ESMB.py
+cp dist\ESMB ESMB-win64-pyinstaller.exe
 rd /S /Q dist
