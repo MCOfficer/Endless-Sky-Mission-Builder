@@ -1,5 +1,7 @@
 version: '#{build}'
 
+skip_non_tags: true
+
 image:
 - Ubuntu
 - Visual Studio 2015
@@ -12,3 +14,8 @@ build_script:
 artifacts:
 - path: ESMB-win64*
 - path: ESMB-amd64*
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: +t67fTQF/OlAb0OEH0mntAmbF4MOWhR7Be+egNMeMSk8nchh6r9CTjzLUlWND9JZ
