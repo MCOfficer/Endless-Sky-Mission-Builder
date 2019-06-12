@@ -6,6 +6,10 @@ image:
 - Ubuntu
 - Visual Studio 2015
 
+platform:
+- x86
+- x64
+
 build_script:
 
 - cmd: appveyor\build.bat
