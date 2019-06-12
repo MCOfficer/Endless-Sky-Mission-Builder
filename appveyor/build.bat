@@ -1,14 +1,17 @@
 REM Setup
-Set _os_bitness=64
+set PLATFORM=win64
+set PYTHON=C:\Python37-x64\python
 IF %PROCESSOR_ARCHITECTURE% == x86 (
-  IF NOT DEFINED PROCESSOR_ARCHITEW6432 Set _os_bitness=32
+  IF NOT DEFINED PROCESSOR_ARCHITEW6432 (
+    set PLATFORM=win32
+    set PYTHON=C:\Python37\python
+  )
 )
-set PLATFORM=win%_os_bitness%
 echo Running on %PLATFORM%
-C:\Python37-x64\python -m pip install nuitka pyinstaller
+%PYTHON% -m pip install nuitka pyinstaller
 
 REM Nuitka Compilation
-C:\Python37-x64\python -m nuitka --assume-yes-for-downloads --standalone --show-progress --show-scons --plugin-enable=tk-inter ESMB.py
+%PYTHON% -m nuitka --assume-yes-for-downloads --standalone --show-progress --show-scons --plugin-enable=tk-inter ESMB.py
 mv ESMB.dist ESMB
 7z a -tzip -mx9 -y ESMB-%PLATFORM%-nuitka.zip .\ESMB\
 rd /S /Q ESMB
