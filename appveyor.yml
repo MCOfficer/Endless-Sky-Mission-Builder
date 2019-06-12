@@ -4,18 +4,13 @@ image:
 - Ubuntu
 - Visual Studio 2015
 
-platform:
-- x86
-- x64
-
 build_script:
 
 - cmd: appveyor\build.bat
 - sh: chmod +x appveyor/build.sh && ./appveyor/build.sh
 
 artifacts:
-- path: ESMB-ubuntu-*
-- path: ESMB-win*
+- path: ESMB-*64*
 
 deploy:
 - provider: GitHub
